@@ -15,7 +15,7 @@ public class MainActivity extends AppCompatActivity {
 
     //Declare three dynamic variables for use on Apptimize
     private static ApptimizeVar<String> appText = ApptimizeVar.createString("Text", "Apptimize Me!");
-    private static ApptimizeVar<String> appColor = ApptimizeVar.createString("Background Color | magenta, green or blue", "magenta");
+    private static ApptimizeVar<String> appColor = ApptimizeVar.createString("Background Color | magenta, green or blue", "blue");
     private static ApptimizeVar<Boolean> appButtonToggle = ApptimizeVar.createBoolean("Button Visibility", true);
 
     @Override
@@ -33,10 +33,10 @@ public class MainActivity extends AppCompatActivity {
         mainText.setText(appText.value());
 
         //Set the color depending on keywords from Apptimize
-        if(appColor.value() == "magenta"){
+        if(appColor.value().equals("magenta")){
             mainText.setBackgroundColor(Color.MAGENTA);
         }
-        else if (appColor.value() == "green"){
+        else if (appColor.value().equals("green")){
             mainText.setBackgroundColor(Color.GREEN);
         }
         else{
